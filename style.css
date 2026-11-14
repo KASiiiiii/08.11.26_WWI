@@ -1,0 +1,210 @@
+:root {
+  --color-bg: #171717;
+  --color-accent: #722b2b;
+  --color-gold: #b9aa91;
+  --color-text: #d8d0be;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Manrope", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+
+.header {
+  height: 82px;
+  padding: 0 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(216, 208, 190, 0.12);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-link {
+  color: var(--color-gold);
+  font-size: 11px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.header-link:hover,
+.header-link-active {
+  color: var(--color-text);
+}
+
+.header-link-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* hero */
+
+.hero {
+  min-height: max(690px, calc(100svh - 82px));
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  padding: 70px 145px 90px;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.hero-map {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  transition:
+    opacity 1.8s ease,
+    transform 8s ease;
+}
+
+.hero-map-europe {
+  opacity: 1;
+  transform: scale(1.05);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, 0.91) 0%,
+      rgba(23, 23, 23, 0.68) 45%,
+      rgba(23, 23, 23, 0.25) 100%
+    ),
+    url("./img/WW1_1.jpg");
+}
+
+.hero-map-war {
+  opacity: 0;
+  transform: scale(1.05);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, 0.93) 0%,
+      rgba(23, 23, 23, 0.72) 45%,
+      rgba(23, 23, 23, 0.3) 100%
+    ),
+    url("./img/WW1_2.jpg");
+}
+
+.hero.is-war .hero-map-europe {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.hero.is-war .hero-map-war {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.hero-content {
+  width: min(700px, 100%);
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-p {
+  color: var(--color-gold);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero-title {
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: -8px;
+  font-weight: 500;
+
+  text-shadow: 0 3px 35px rgba(0, 0, 0, 0.3);
+}
+
+.hero-em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -9px;
+  color: var(--color-gold);
+}
+
+.hero-description {
+  max-width: 440px;
+  color: var(--color-gold);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 25px 0 34px;
+}
+
+.hero-title-line {
+  display: block;
+}
+
+/* countdown */
+
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.countdown-unit {
+  min-width: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.countdown-number {
+  font-family: "DM Mono", monospace;
+  font-size: 61px;
+  line-height: 1;
+  letter-spacing: -5px;
+  color: var(--color-text);
+}
+
+.countdown-label {
+  color: var(--color-gold);
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.countdown-separator {
+  color: var(--color-accent);
+  font-family: "DM Mono", monospace;
+  font-size: 35px;
+  line-height: 1;
+  opacity: 0.95;
+  margin-top: 20px;
+}

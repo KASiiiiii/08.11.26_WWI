@@ -1,12 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WWI</title>
-    <link rel="stylesheet" href="./style.scss">
-</head>
-<body>
-    <script src="./script.js"></script>
-</body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="header-nav">
+        <a href="#countdown" class="header-link header-link-active">
+          The countdown
+        </a>
+        <a href="#" class="header-link">Timeline</a>
+        <a href="#context" class="header-link">The context</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="countdown">
+        <div class="hero-map hero-map-europe"></div>
+        <div class="hero-map hero-map-war"></div>
+
+        <div class="hero-content">
+          <p class="hero-p">28 JUNE -- 28 JULY, 1914</p>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line">Thirty days</span>
+            <em class="hero-em">to the </em>Great War.
+          </h1>
+
+          <p class="hero-description">
+            One assassination. A chain of ultimatums, alliances and decisions.
+            Europe is moving towards a war no one can fully control.
+          </p>
+
+          <div class="countdown">
+            <div class="countdown-unit">
+              <span class="countdown-number">0</span>
+              <span class="countdown-label">DAYS</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-unit">
+              <span class="countdown-number">0</span>
+              <span class="countdown-label">HOURS</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-unit">
+              <span class="countdown-number">0</span>
+              <span class="countdown-label">MINUTES</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-unit">
+              <span id="seconds" class="countdown-number">30</span>
+              <span class="countdown-label">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
 </html>
